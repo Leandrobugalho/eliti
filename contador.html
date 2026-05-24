@@ -68,7 +68,7 @@
     <p id="data"> Data </p>
     <BR>
 
-    <p id="numero"> Contador </p>
+    <p id="numero" ondblclick="mudaValor()"> Contador </p>
      
     <button onclick="adiciona()"> MAIS </button>  
     <button onclick="diminuir()"> MENOS </button>  
@@ -135,6 +135,15 @@
             document.getElementById("data").textContent=dataAtual.toLocaleString("pt-BR");
         }
 
+        function mudaValor() {
+            let novoValor = prompt("Digite um novo valor para o contador:");
+            if (novoValor !== null && !isNaN(novoValor)) {
+                contador = parseInt(novoValor);
+                mostrar();
+            } else {
+                alert("Por favor, digite um número válido.");
+            }   
+        }
 
 
         setInterval(data, 1000);
