@@ -84,14 +84,6 @@
 
     <div style="text-align:center;">
 
-
-
-    <ul id="lista" style="display:inline-block; text-align:left;">
-        <li>Maçã</li>
-        <li>Banana</li>
-        <li>Laranja</li>
-    </ul>
-
 </div>
 
 
@@ -135,10 +127,17 @@
             document.getElementById("numero").textContent=contador;
             document.getElementById("slider").value=contador;
             
-            let dataAtual = new Date();
-            document.getElementById("data").textContent=dataAtual.toLocaleString("pt-BR");
+            
          }
       
+        function data() {
+            let dataAtual = new Date();
+            document.getElementById("data").textContent=dataAtual.toLocaleString("pt-BR");
+        }
+
+
+
+        setInterval(data, 1000);
 
     </script>
 
