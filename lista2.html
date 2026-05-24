@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 150px;
+        margin-bottom: 10px;
+        word-break: break-word;
+    }
+    </style>
+
+</head>
+<body>
+    <button onclick="qualTarefa()"> Adicionar tarefa </button>
+    <button onclick="limpaTarefa()">Limpa</button>
+    <ul id="lista">
+       
+    </ul>
+    <script>
+        
+        function qualTarefa(){
+              let valor
+              valor  =  prompt("Informe a terefa: ");
+              let lista = document.getElementById("lista");
+              let novaTarefa=document.createElement("li");
+              novaTarefa.textContent=valor;
+              
+              let botaoExcluir = document.createElement("button");
+              botaoExcluir.textContent = "X";
+              botaoExcluir.onclick = function() {
+                    novaTarefa.remove();
+              };
+
+              novaTarefa.appendChild(botaoExcluir);
+              lista.appendChild(novaTarefa);
+        }
+      
+        function limpaTarefa(){
+            let lista;
+            lista=document.getElementById("lista");
+            lista.textContent="";
+        }
+    </script>
+</body>
+</html>

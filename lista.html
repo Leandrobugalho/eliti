@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <b>Lista de Tarefas</b> <br>
+    
+    <input type="text" id="tarefa" placeholder="Digite a tarefa">
+    
+    <button onclick="adicionarLista()">Adicionar Tarefa</button>
+    <button onclick="limpar()">Limpar lista</button>
+    <ul ID="lista">
+     </ul>
+
+    <script>
+        limpar();    
+       
+
+
+       function limpar() {
+           let lista = document.getElementById("lista");  
+           lista.textContent="";
+       }
+
+       function adicionarLista(){
+           let tarefa = document.getElementById("tarefa").value;  
+           let lista = document.getElementById("lista");
+           let novoItem=document.createElement ("li");
+           
+           if (tarefa.trim() != "") { 
+                novoItem.textContent=tarefa + " ";
+                let botaoExcluir = document.createElement("button");
+                botaoExcluir.textContent="Excluir"
+                  botaoExcluir.onclick = function () {
+                    novoItem.remove();
+                };
+
+                novoItem.appendChild(botaoExcluir);
+
+                lista.appendChild(novoItem);
+           }
+
+       }
+
+
+    </script>    
+</body>
+</html>
+

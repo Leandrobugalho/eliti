@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           margin: 0;
+           box-sizing: border-box;
+           
+        }
+
+    
+
+
+        body{
+            background-color: cornflowerblue; 
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        section{
+            width: 600px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 25px;
+            background-color: blue;
+            border: 20px solid rgb(248, 248, 248) ;
+            border-radius: 20px;
+            box-shadow: 20px 20px 30px  seagreen;
+        }
+
+        #numero {
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+
+        #data {
+            font-size: 30px;
+            color: black;
+            font-weight: bold;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 12px;
+            margin: 5px;
+            border: 2px solid red;
+            border-radius: 12px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+       button:hover {
+           transition: 300ms;
+           font-size: 40px;
+           color: green;
+       }
+
+
+    </style>
+</head>
+<body>
+    <section id="section">
+    
+    <p id="data"> Data </p>
+    <BR>
+
+    <p id="numero"> Contador </p>
+     
+    <button onclick="adiciona()"> MAIS </button>  
+    <button onclick="diminuir()"> MENOS </button>  
+    <button onclick="mudarCor()"> MUDAR COR </button>
+    </section>
+    
+    <br>
+     <input type="range" min="-100" max="100" value="10" id="slider" onchange="atualiza()">
+
+
+     <br><br><br><br><br><br><br><br>
+       
+
+    <div style="text-align:center;">
+
+
+
+    <ul id="lista" style="display:inline-block; text-align:left;">
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Laranja</li>
+    </ul>
+
+</div>
+
+
+    <script>
+         let contador=0;
+         let dataAtual = new Date();
+         document.getElementById("data").textContent=dataAtual.toLocaleString("pt-BR");
+         document.getElementById("section").style.backgroundColor = "blue";
+
+         mostrar();
+   
+         function adiciona() {
+            contador++;
+            mostrar();
+                       
+         }
+
+         function mudarCor(){
+               
+            if  (document.getElementById("section").style.backgroundColor=="blue") {
+                document.getElementById("section").style.backgroundColor="red";   
+            
+             } else {
+                document.getElementById("section").style.backgroundColor="blue";
+                  
+             }
+         }
+
+
+         function diminuir() {
+            contador--; 
+            mostrar();
+         }
+
+         function atualiza() {
+            contador= document.getElementById("slider").value;
+            mostrar();
+         }
+
+         function mostrar() {
+            document.getElementById("numero").textContent=contador;
+            document.getElementById("slider").value=contador;
+            
+            let dataAtual = new Date();
+            document.getElementById("data").textContent=dataAtual.toLocaleString("pt-BR");
+         }
+      
+
+    </script>
+
+
+
+
+</body>
+</html>
