@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu PWA</title>
+    <!-- Link para o arquivo de configuração do app -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f0f2f5; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 300px; margin: auto; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Minhas Tarefas</h2>
+        <input type="text" id="tarefa" placeholder="Digite uma tarefa...">
+        <button onclick="adicionar()">Adicionar</button>
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        // Função simples para a lista funcionar
+        function adicionar() {
+            let item = document.getElementById('tarefa').value;
+            if(item) {
+                let li = document.createElement('li');
+                li.textContent = item;
+                document.getElementById('lista').appendChild(li);
+                document.getElementById('tarefa').value = "";
+            }
+        }
+
+        // CODIGO PWA: Registra o Service Worker para permitir funcionamento offline
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(() => console.log("PWA Registrado com Sucesso!"))
+                .catch(err => console.log("Erro ao registrar PWA:", err));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+        *{
+           margin: 0;
+           box-sizing: border-box;
+           
+        }
+
+            body{
+            background-color: cornflowerblue; 
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+
+        section{
+            display: block;
+            width: 600px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 25px;
+            background-color: blue;
+            border: 20px solid rgb(248, 248, 248) ;
+            border-radius: 20px;
+            box-shadow: 20px 20px 30px  seagreen;
+        }
+
+     button {
+            font-size: 20px;
+            padding: 12px;
+            margin: 5px;
+            border: 2px solid red;
+            border-radius: 12px;
+            background-color: greenyellow;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    
+     <section>
+       <p id="numero">0</p>
+        <button onclick="Aumenta()">Aumentar</button>
+        <button onclick="Diminui()">Diminuir</button>
+</section>
+    <script>
+       let valor = 0;
+       mostrar();
+ 
+        function Aumenta() {
+            valor++;
+            mostrar();
+        }
+
+        function Diminui() {
+            valor--;
+            mostrar();
+        }
+
+
+       function mostrar() {
+           document.getElementById("numero").textContent = valor;
+       }
+
+    </script>
+
+</body>
+</html>
+

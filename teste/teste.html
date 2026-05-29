@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><div>
+    <a href="signos.html">Home</a>
+    <a href="contato.html">Contato</a>
+</div>
+<h1>Signos</h1>
+<section>
+    <div class="fogo">
+        <h2>Áries</h2>
+        <p>masculino</p>
+        <p>fogo</p>
+    </div>
+    <div class="terra">
+        <h2>Touro</h2>
+        <p>feminino</p>
+        <p>terra</p>
+    </div>
+    <div class="ar">
+        <h2>Gêmeos</h2>
+        <p>masculino</p>
+        <p>ar</p>
+    </div>
+    <a class="agua" href="cancer.html">
+        <h2>Câncer</h2>
+        <p>feminino</p>
+        <p>água</p>
+    </a>
+    <div class="fogo">
+        <h2>Leão</h2>
+        <p>masculino</p>
+        <p>fogo</p>
+    </div>
+    <div class="terra">
+        <h2>Virgem</h2>
+        <p>feminino</p>
+        <p>terra</p>
+    </div>
+    <div class="ar">
+        <h2>Libra</h2>
+        <p>masculino</p>
+        <p>ar</p>
+    </div>
+    <a class="agua" href="cancer.html">
+        <h2>Escorpião</h2>
+        <p>feminino</p>
+        <p>água</p>
+    </a>
+    <div class="fogo">
+        <h2>Sagitário</h2>
+        <p>masculino</p>
+        <p>fogo</p>
+    </div>
+    <div class="terra">
+        <h2>Capricórnio</h2>
+        <p>feminino</p>
+        <p>terra</p>
+    </div>
+    <div class="ar">
+        <h2>Aquário</h2>
+        <p>masculino</p>
+        <p>ar</p>
+    </div>
+    <div class="agua">
+        <h2>Peixes</h2>
+        <p>feminino</p>
+        <p>água</p>
+    </div>
+       <div class="agua">
+        <h2>Abobrinha</h2>
+        <p>fruta</p>
+        <p>amarela</p>
+        </div>
+         <div class="ar">
+        <h2>Abobrinha12</h2>
+        <p>fruta12</p>
+        <p>amarela12</p>
+        </div>
+</section>
+<style>
+    h1 {
+    		text-align: center;
+      }
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        background: lightgrey;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      div, a { 
+         flex: 1;
+    		text-align: center;
+    		text-decoration: none;
+    		color: white; 
+    		padding: 20px;
+         font-family: Arial, sans-serif;
+         transition: 0.3s all;
+    		border-radius: 10px;
+    	}
+       .fogo {
+         background: orange;
+    	}
+       .terra {
+    		background: red;
+    	}
+       .agua {
+    		background: green;
+       }
+       .ar {
+    		background: blue;
+       }
+       section > div:hover,
+    	section > a:hover {
+          cursor: pointer;
+    		opacity: 0.7;
+    	}
+</style>
+    
+</body>
+</html>
